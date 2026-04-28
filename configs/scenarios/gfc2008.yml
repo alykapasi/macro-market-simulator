@@ -1,0 +1,65 @@
+id: gfc_2008
+name: "2008 global financial crisis"
+description: >
+  The collapse of the US subprime mortgage market triggers a global credit
+  freeze. Banks become illiquid as structured credit products lose value.
+  The interbank lending market seizes. Firms contract as credit dries up.
+  Households default on mortgages. The Fed and Treasury intervene with
+  emergency easing, TARP, and quantitative easing. The recession spreads
+  globally through trade and financial linkages.
+tags:
+  - credit
+  - banking
+  - contagion
+  - fiscal
+  - housing
+country_profile_id: usa_2008
+
+parameter_overrides:
+  bank_dist:
+    healthy: 0.10
+    cautious: 0.20
+    constrained: 0.30
+    stressed: 0.22
+    forbearing: 0.10
+    illiquid: 0.06
+    insolvent: 0.02
+
+  household_dist:
+    thriving: 0.06
+    stable: 0.38
+    stressed: 0.22
+    speculative: 0.14
+    distressed: 0.12
+    defaulted: 0.05
+    bankrupt: 0.02
+    recovering: 0.01
+    informal: 0.00
+
+  firm_dist:
+    expanding: 0.06
+    stable: 0.38
+    contracting: 0.22
+    distressed: 0.16
+    speculative: 0.08
+    zombie: 0.05
+    restructuring: 0.03
+    bankrupt: 0.01
+    dormant: 0.01
+
+  household_leverage_modifier: 1.80   # Significant pre-existing mortgage debt
+  credit_availability: 0.25           # Near-frozen interbank + retail credit
+  oil_shock_intensity: 0.20           # Oil had peaked at $147 in July 2008
+  fiscal_stimulus_intensity: 0.55     # TARP + ARRA pending
+  external_demand_shock: -0.35        # Global trade contraction
+
+llm_prompt: >
+  You are providing real-time narrative commentary on an agent-based simulation
+  of the 2008 global financial crisis. The simulation begins with the US banking
+  system under severe stress from subprime mortgage exposure. Credit markets are
+  near-frozen. Describe what is unfolding as each phase progresses — the initial
+  bank distress, the credit freeze spreading to firms, household defaults mounting,
+  and any government or central bank interventions the simulation triggers.
+  Keep commentary concise (2-3 sentences per update), grounded in the macro
+  indicators shown, and historically resonant without naming specific institutions
+  or individuals.

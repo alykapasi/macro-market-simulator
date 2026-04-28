@@ -1,0 +1,56 @@
+id: usa_2008
+name: "United States (2008)"
+region: "North America"
+notes: >
+  Pre-GFC United States profile. High household leverage, moderate institutional
+  trust, low bankruptcy stigma (Chapter 7/11 accessible), well-developed
+  formal safety net but significant financialisation of the economy.
+  Informality index is low. High risk tolerance reflecting the preceding
+  credit expansion cycle.
+
+modifiers:
+  bankruptcy_stigma: 0.20        # Low — Chapter 7 is accessible and relatively fast
+  social_safety_net: 0.45        # Moderate — unemployment insurance exists but time-limited
+  institutional_trust: 0.55      # Moderate — pre-crisis trust in financial institutions
+  central_bank_independence: 0.80 # High — Fed is operationally independent
+  informality_index: 0.08        # Low — small informal sector
+  ease_of_doing_business: 0.82   # High — firm creation and recovery is straightforward
+  risk_tolerance: 0.78           # High — product of the preceding credit cycle
+  collectivism: 0.25             # Low — individualist culture (Hofstede)
+
+default_population:
+  households: 400
+  firms: 100
+  banks: 8
+  investors: 5
+
+default_household_dist:
+  thriving: 0.12
+  stable: 0.48
+  stressed: 0.16
+  speculative: 0.12              # Elevated — mortgage leverage cycle
+  distressed: 0.07
+  defaulted: 0.03
+  bankrupt: 0.01
+  recovering: 0.01
+  informal: 0.00
+
+default_firm_dist:
+  expanding: 0.12
+  stable: 0.50
+  contracting: 0.14
+  distressed: 0.09
+  speculative: 0.08              # Elevated — credit-fuelled expansion
+  zombie: 0.03
+  restructuring: 0.02
+  bankrupt: 0.01
+  dormant: 0.01
+
+default_bank_dist:
+  healthy: 0.25
+  cautious: 0.30
+  constrained: 0.25              # Elevated — subprime exposure building
+  stressed: 0.12
+  forbearing: 0.05
+  illiquid: 0.02
+  insolvent: 0.01
